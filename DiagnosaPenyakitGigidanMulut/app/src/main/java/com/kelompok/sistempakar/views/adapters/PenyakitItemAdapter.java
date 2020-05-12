@@ -40,9 +40,7 @@ public class PenyakitItemAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = LayoutInflater.from(context).inflate(R.layout.nama_penyakit, parent, false);
         TextView txtNamaPenyakit = view.findViewById(R.id.txtNamaPenyakit);
-        TextView txtSolusiPenyakit = view.findViewById(R.id.txtSolusiPenyakit);
         txtNamaPenyakit.setText(penyakitList.get(position).getNama());
-        txtSolusiPenyakit.setText(penyakitList.get(position).getSolusi());
         return view;
     }
 }

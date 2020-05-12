@@ -8,14 +8,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".views.activities.TambahPenyakitActivity"></activity>
+        android:theme="@style/noAppTheme">
+        <activity android:name=".views.activities.KeteranganPenyakitActivity"></activity>
+        <activity android:name=".views.activities.activitiesPenyakit.KariesGigiActivity" />
+        <activity android:name=".views.activities.TambahPenyakitActivity" />
         <activity android:name=".views.activities.MainActivity" />
         <activity android:name=".views.activities.SignUpActivity" />
         <activity android:name=".views.activities.TentangActivity" />
         <activity android:name=".views.activities.DetailPenyakitActivity" />
         <activity android:name=".views.activities.DiagnosaActivity" />
-        <activity android:name=".views.activities.MenuActivity" />
+        <activity
+            android:name=".views.activities.MenuActivity"
+            android:theme="@style/AppTheme" />
         <activity android:name=".views.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

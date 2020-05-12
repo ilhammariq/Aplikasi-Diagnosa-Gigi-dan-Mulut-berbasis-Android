@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="PID"
         android:inputType="textPersonName" />
 
     <EditText
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Nama Penyakit"
         android:inputType="textPersonName" />
 
     <EditText
@@ -27,6 +29,7 @@
         android:layout_height="176dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Solusi Penyakit"
         android:inputType="textMultiLine" />
 
     <Button
