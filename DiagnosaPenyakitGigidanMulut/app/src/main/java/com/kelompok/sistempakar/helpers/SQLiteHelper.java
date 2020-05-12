@@ -33,6 +33,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String KEY_PID = "pid";
     private static final String KEY_NAMA_PENYAKIT = "nama_penyakit";
+    private static final String KEY_PENYEBAB_PENYAKIT = "penyebab_penyakit";
     private static final String KEY_SOLUSI_PENYAKIT = "solusi_penyakit";
 
     // Table Create Statements
@@ -47,6 +48,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             + TABLE_PENYAKIT + "("
             + KEY_PID + " TEXT NOT NULL PRIMARY KEY,"
             + KEY_NAMA_PENYAKIT + " TEXT NOT NULL,"
+            + KEY_PENYEBAB_PENYAKIT + " TEXT NOT NULL,"
             + KEY_SOLUSI_PENYAKIT + " TEXT NOT NULL"
             + ")";
 
@@ -80,6 +82,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             HashMap<String,String> penyakit = new HashMap<>();
             penyakit.put("pid",cursor.getString(cursor.getColumnIndex(KEY_PID)));
             penyakit.put("nama_penyakit",cursor.getString(cursor.getColumnIndex(KEY_NAMA_PENYAKIT)));
+            penyakit.put("penyebab_penyakit",cursor.getString(cursor.getColumnIndex(KEY_PENYEBAB_PENYAKIT)));
             penyakit.put("solusi_penyakit",cursor.getString(cursor.getColumnIndex(KEY_SOLUSI_PENYAKIT)));
             penyakitList.add(penyakit);
         }

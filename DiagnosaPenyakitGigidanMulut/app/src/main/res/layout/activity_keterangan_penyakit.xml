@@ -25,6 +25,30 @@
             android:textSize="25sp" />
 
         <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Penyebab :"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_penyebabP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="TextView"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Solusi : "
+            android:textSize="17sp" />
+
+        <TextView
             android:id="@+id/tv_solusiP"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

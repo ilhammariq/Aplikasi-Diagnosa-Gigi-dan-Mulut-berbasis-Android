@@ -30,19 +30,22 @@ public class DetailPenyakitActivity extends AppCompatActivity {
         ArrayList<HashMap<String, String>> penyakitList = db.getAllpenyakit();
         ListView lv = findViewById(R.id.listNamaPenyakit);
         ListAdapter adapter = new SimpleAdapter(DetailPenyakitActivity.this, penyakitList, R.layout.nama_penyakit,
-                new String[]{"nama_penyakit","solusi_penyakit"},
-                new int[]{R.id.txtNamaPenyakit,R.id.txtSolusiPenyakit});
+                new String[]{"nama_penyakit","nama_penyakit","solusi_penyakit"},
+                new int[]{R.id.txtNamaPenyakit,R.id.txtPenyebabPenyakit,R.id.txtSolusiPenyakit});
         lv.setAdapter(adapter);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView nama_p = view.findViewById(R.id.txtNamaPenyakit);
+                TextView penyebab_p = view.findViewById(R.id.txtPenyebabPenyakit);
                 TextView solusi_p = view.findViewById(R.id.txtSolusiPenyakit);
                 String namaP =  nama_p.getText().toString();
+                String penyebabP =  penyebab_p.getText().toString();
                 String solusiP =  solusi_p.getText().toString();
                 Intent penyakit = new Intent(DetailPenyakitActivity.this, KeteranganPenyakitActivity.class);
                 penyakit.putExtra("namaP",namaP);
+                penyakit.putExtra("penyebabP",penyebabP);
                 penyakit.putExtra("solusiP",solusiP);
                 startActivity(penyakit);
             }

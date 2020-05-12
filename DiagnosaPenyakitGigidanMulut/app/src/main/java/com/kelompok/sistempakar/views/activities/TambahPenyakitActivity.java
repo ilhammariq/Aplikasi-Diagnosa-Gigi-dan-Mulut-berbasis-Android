@@ -14,8 +14,8 @@ import com.kelompok.sistempakar.helpers.SQLiteHelper;
 import com.kelompok.sistempakar.models.Kelas_Penyakit;
 
 public class TambahPenyakitActivity extends AppCompatActivity {
-    String pidP,namaP,solusiP;
-    EditText pid,nama,solusi;
+    String pidP,namaP,penyebabP,solusiP;
+    EditText pid,nama,penyebab,solusi;
     Button save;
 
     @Override
@@ -25,6 +25,7 @@ public class TambahPenyakitActivity extends AppCompatActivity {
 
         pid = findViewById(R.id.et_PID);
         nama = findViewById(R.id.et_namaPenyakit);
+        penyebab = findViewById(R.id.et_penyebabPenyakit);
         solusi = findViewById(R.id.et_solusiPenyakit);
 
         save = findViewById(R.id.btn_save);
@@ -34,19 +35,22 @@ public class TambahPenyakitActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pidP = pid.getText().toString();
                 namaP = nama.getText().toString();
+                penyebabP = penyebab.getText().toString();
                 solusiP = solusi.getText().toString();
 
-                if (pidP.isEmpty() || namaP.isEmpty() || solusiP.isEmpty()) {
+                if (pidP.isEmpty() || namaP.isEmpty() || penyebabP.isEmpty() || solusiP.isEmpty()) {
                     Toast.makeText(TambahPenyakitActivity.this, "Data belum lengkap, Silihkan isi kembali", Toast.LENGTH_SHORT).show();
                     pid.setText("");
                     nama.setText("");
+                    penyebab.setText("");
                     solusi.setText("");
                 }else{
                     SQLiteHelper sqLiteHelper = new SQLiteHelper(TambahPenyakitActivity.this, null, null, 1);
-                    Kelas_Penyakit penyakit = new Kelas_Penyakit(pidP,namaP,solusiP);
+                    Kelas_Penyakit penyakit = new Kelas_Penyakit(pidP,namaP,penyebabP,solusiP);
                     sqLiteHelper.addpenyakit(penyakit);
                     pid.setText("");
                     nama.setText("");
+                    penyebab.setText("");
                     solusi.setText("");
                     Toast.makeText(TambahPenyakitActivity.this, "Data Pelanggan Berhasil Disimpan", Toast.LENGTH_SHORT).show();
                 }

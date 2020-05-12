@@ -37,7 +37,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Masukan Username Password ", Toast.LENGTH_SHORT).show();
                 } else {
-                    if(ceklogin == true){
+                    if(ceklogin == true && username.equals("admin")){
+                        Toast.makeText(LoginActivity.this, "Login Berhasil ", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                        startActivity(intent);
+                    }else if(ceklogin == true){
                         Toast.makeText(LoginActivity.this, "Login Berhasil ", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                         startActivity(intent);
